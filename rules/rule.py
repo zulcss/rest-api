@@ -18,7 +18,12 @@ class Rule(Resource):
             'ticketRule': ticket
         }
     
-    def get(self, site):
+    def get(self, site=None):
+        if not site:
+            return {
+                    'ticket': []
+            }
+
         return {
             "ticket": [
                 {
